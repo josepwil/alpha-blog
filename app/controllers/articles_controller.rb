@@ -8,11 +8,13 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    
   end
   
   def create
-    render plain: params[:article]
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article.save
+    # redirects to show action
+    redirect_to @article
   end
   
   

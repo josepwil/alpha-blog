@@ -8,13 +8,19 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    @article = Article.new
   end
   
   def create
+    # strong parameters - whitelisting of data
     @article = Article.new(params.require(:article).permit(:title, :description))
-    @article.save
+     if @article.save
+      flash[:notice] = "Article was created successfully"
     # redirects to show action
-    redirect_to @article
+      redirect_to @article
+     else
+      render 'new'
+     end
   end
   
   

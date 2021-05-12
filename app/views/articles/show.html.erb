@@ -5,5 +5,5 @@
 
 <%# by default by passing @article to edit_article_path the @article.id will be used %>
 <%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Delete', article_path(@article), method: :delete %> |
+<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %> |
 <%= link_to 'Return to articles listing', articles_path %>

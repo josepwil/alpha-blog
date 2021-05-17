@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   def create
     # strong parameters - whitelisting of data
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
      if @article.save
       flash[:notice] = "Article was created successfully"
     # redirects to show action

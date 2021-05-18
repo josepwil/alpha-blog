@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
-
+ # unit tests
   def setup
     @category = Category.new(name: "Sports")
   end

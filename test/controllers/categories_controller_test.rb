@@ -1,6 +1,7 @@
 require "test_helper"
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
+  # functional tests
   setup do
     @category = Category.create(name: "Sports")
   end
